@@ -1,12 +1,7 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-class HomePage extends StatefulWidget{
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -16,7 +11,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        title: Text('titles.home'.tr(),
+            style: Theme.of(context).appBarTheme.textTheme.headline4),
       ),
       body: Center(
           child: Container(
@@ -30,26 +27,44 @@ class _HomePageState extends State<HomePage> {
                 'Home',
               ),
             ),
-           Container(
-             child: ElevatedButton
-             (child:const Text('Users'),
-             onPressed: () {
-               Navigator.pushNamed(context, '/user',
-               arguments:
-                     'User Page');
-             },
-             ),
-           ),
-            Container(
-             child: ElevatedButton
-             (child:const Text('User Profile'),
-             onPressed: () {
-               Navigator.pushNamed(context, '/userprofile',
-               arguments:
-                      'User Profile Page');
-             },
-             ),
-           ),
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.blue)),
+              color: Colors.white,
+              textColor: Colors.blue,
+              padding: EdgeInsets.all(8.0),
+              onPressed: () {
+                Navigator.pushNamed(context, '/users');
+              },
+              child: Text(
+                "Users",
+                style: TextStyle(
+                  fontSize: 14.0,
+                ),
+              ),
+            ),
+            FlatButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.blue)),
+              color: Colors.white,
+              textColor: Colors.blue,
+              padding: EdgeInsets.all(8.0),
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  '/profile',
+                  arguments:
+                      "Second Page", //This is really importan. Here you should pass every parameter as arguments
+                );
+              },
+              child: Text(
+                "Profile",
+                style: TextStyle(
+                  fontSize: 14.0,
+                ),
+              ),
+            ),
           ],
         ),
       )),
