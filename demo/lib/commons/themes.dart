@@ -4,12 +4,12 @@ import 'package:demo/extensions/color.dart';
 
 //Color theme generate https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=03A9F4
 // https://maketintsandshades.com/#03a9f4
-ThemeData lightTheme = ThemeData(
+ThemeData primaryTheme = ThemeData(
   brightness: Brightness.light,
   visualDensity: VisualDensity(vertical: 0.5, horizontal: 0.5),
   primarySwatch: MaterialColor(
     //https://api.flutter.dev/flutter/material/Colors-class.html
-    240116,//primary color in integer format
+    240116,
     <int, Color>{
       50: HexColor.fromHex("#b3e5fc"),
       100: HexColor.fromHex("#9addfb"),
@@ -23,20 +23,19 @@ ThemeData lightTheme = ThemeData(
       900: HexColor.fromHex("#007ac1")
     },
   ),
-  primaryColor: HexColor.fromHex("#00897b"),
+  primaryColor: HexColor.fromHex("#03a9f4"),
   fontFamily: 'Lato',
   appBarTheme: AppBarTheme(
+      backgroundColor: HexColor.fromHex("#03a9f4"),
       textTheme: TextTheme(
-    headline4: TextStyle(
-      fontFamily: 'Lato',
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
-    ),
-  )),
-  buttonTheme: ButtonThemeData(
-      //button themes
-      ),
+        headline4: TextStyle(
+          fontFamily: 'Lato',
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      )),
+  buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary),
   toggleButtonsTheme: ToggleButtonsThemeData(
       //toggle button theme
       ),
@@ -48,12 +47,25 @@ ThemeData lightTheme = ThemeData(
   backgroundColor: Color(0xff457BE0),
   dialogBackgroundColor: Colors.white,
   indicatorColor: Color(0xff457BE0),
-  hintColor: Colors.grey,
+  hintColor: HexColor.fromHex("#bcbec0"),
   errorColor: Colors.red,
   toggleableActiveColor: Color(0xff6D42CE),
+  inputDecorationTheme: InputDecorationTheme(
+    labelStyle: TextStyle(
+      fontFamily: 'Lato',
+      fontSize: 14.0,
+      fontWeight: FontWeight.normal,
+      color: HexColor.fromHex("#414042"),
+    ),
+  ),
   textTheme: TextTheme(
-      //text themes that contrast with card and canvas
-      ),
+    headline4: TextStyle(
+      fontFamily: 'Lato',
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+  ),
   primaryTextTheme: TextTheme(
       //text theme that contrast with primary color
       ),

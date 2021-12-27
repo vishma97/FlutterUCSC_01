@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
 
-class User extends StatefulWidget{
-  User({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class UsersPage extends StatefulWidget {
   @override
-  _UserState createState() => _UserState();
+  _UsersPageState createState() => _UsersPageState();
 }
 
-class _UserState extends State<User> {
+class _UsersPageState extends State<UsersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Users'),
       ),
       body: Center(
-       child: Column(mainAxisAlignment: MainAxisAlignment.center,
-       children: <Widget>[
-         const Text(
-           'User Page'
-           )
-       ],),
-       ),
+          child: Container(
+        padding: EdgeInsets.only(top: 55),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 15, bottom: 50),
+              child: Text(
+                'Users',
+              ),
+            ),
+          ],
+        ),
+      )),
     );
   }
 }
