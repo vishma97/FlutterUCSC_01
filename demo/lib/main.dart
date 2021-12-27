@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: Utilities.isLoggedIn() ? HomePage() : LoginPage(),
+      home: HomePage(),
     );
   }
 }
