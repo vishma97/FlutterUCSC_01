@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: HomePage() ,
+      home: this.token != null ? HomePage() : LoginPage(),
     );
   }
 }
