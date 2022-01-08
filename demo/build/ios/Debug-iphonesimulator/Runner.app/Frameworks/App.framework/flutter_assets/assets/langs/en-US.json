@@ -7,11 +7,13 @@
         "industries" : "Industries"
     },
     "buttonTitles": {
-        "login" : "Login"
-        
+        "login" : "Login",
+        "add" : "Add",
+        "delete" : "Delete"  
     },
     "labels": {
         "email" : "Email",
+        "name" : "Name",
         "password" : "Password",
         "industry_id" : "Industry Id : "
     },
@@ -30,5 +32,18 @@
         "add_user" : "Add User",
         "logout" : "Logout"
         
+    },
+    "alert": {
+        "title" : "Confirmation",
+        "logout_message" : "Are you sure? You want to logout?",
+        "delete_message" : "Are you sure? You want to delet?",
+        "yes" : "Yes",
+        "no" : "No"
+    },
+    "flushbar": {
+        "user_success" : "User added succussfuly",
+        "user_fail" : "User adding failed. Please try again.",
+        "user_delete_success" : "User deleted successfully.",
+        "user_delet_fail" : "User delet failed. Please try again."
     }
 }
